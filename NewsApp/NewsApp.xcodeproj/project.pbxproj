@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD4438C72C40140100D79C38 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4438C62C40140100D79C38 /* NewsViewController.swift */; };
 		CD891A032C3DAF13000E5986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A022C3DAF13000E5986 /* AppDelegate.swift */; };
 		CD891A072C3DAF13000E5986 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A062C3DAF13000E5986 /* GeneralViewController.swift */; };
 		CD891A0C2C3DAF14000E5986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD891A0B2C3DAF14000E5986 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD4438C62C40140100D79C38 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		CD8919FF2C3DAF13000E5986 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD891A022C3DAF13000E5986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD891A062C3DAF13000E5986 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD4438C82C4031F800D79C38 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				CD4438C62C40140100D79C38 /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		CD8919F62C3DAF13000E5986 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +77,7 @@
 				CD891A1F2C3DBE6B000E5986 /* General */,
 				CD891A202C3DBE73000E5986 /* Business */,
 				CD891A212C3DBE79000E5986 /* Technology */,
+				CD4438C82C4031F800D79C38 /* News */,
 				CD891A0B2C3DAF14000E5986 /* Assets.xcassets */,
 				CD891A0D2C3DAF14000E5986 /* LaunchScreen.storyboard */,
 				CD891A102C3DAF14000E5986 /* Info.plist */,
@@ -187,6 +198,7 @@
 				CD891A1B2C3DB17F000E5986 /* TechnologyViewController.swift in Sources */,
 				CD891A172C3DB09D000E5986 /* TabBarController.swift in Sources */,
 				CD891A072C3DAF13000E5986 /* GeneralViewController.swift in Sources */,
+				CD4438C72C40140100D79C38 /* NewsViewController.swift in Sources */,
 				CD891A192C3DB165000E5986 /* BusinessViewController.swift in Sources */,
 				CD891A032C3DAF13000E5986 /* AppDelegate.swift in Sources */,
 			);
