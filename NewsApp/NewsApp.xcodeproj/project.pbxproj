@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD3243D32C50152A003528F9 /* NewsRespondObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3243D22C50152A003528F9 /* NewsRespondObject.swift */; };
+		CD3243D52C50158F003528F9 /* ArticleRespondObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3243D42C50158F003528F9 /* ArticleRespondObject.swift */; };
+		CD3243D82C5018CB003528F9 /* ArticleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3243D72C5018CB003528F9 /* ArticleCellViewModel.swift */; };
 		CD4438C72C40140100D79C38 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4438C62C40140100D79C38 /* NewsViewController.swift */; };
 		CD891A032C3DAF13000E5986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A022C3DAF13000E5986 /* AppDelegate.swift */; };
 		CD891A072C3DAF13000E5986 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A062C3DAF13000E5986 /* GeneralViewController.swift */; };
@@ -17,9 +20,14 @@
 		CD891A1B2C3DB17F000E5986 /* TechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A1A2C3DB17F000E5986 /* TechnologyViewController.swift */; };
 		CD891A1E2C3DBD02000E5986 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD891A1D2C3DBD02000E5986 /* SnapKit */; };
 		CD891A242C3DBEA0000E5986 /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A232C3DBEA0000E5986 /* GeneralCollectionViewCell.swift */; };
+		CD8C9ABB2C403DC6001B92CA /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C9ABA2C403DC6001B92CA /* DetailsCollectionViewCell.swift */; };
+		CD8C9ABD2C4047A4001B92CA /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C9ABC2C4047A4001B92CA /* GeneralViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD3243D22C50152A003528F9 /* NewsRespondObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRespondObject.swift; sourceTree = "<group>"; };
+		CD3243D42C50158F003528F9 /* ArticleRespondObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRespondObject.swift; sourceTree = "<group>"; };
+		CD3243D72C5018CB003528F9 /* ArticleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellViewModel.swift; sourceTree = "<group>"; };
 		CD4438C62C40140100D79C38 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		CD8919FF2C3DAF13000E5986 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD891A022C3DAF13000E5986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +39,8 @@
 		CD891A182C3DB165000E5986 /* BusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 		CD891A1A2C3DB17F000E5986 /* TechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyViewController.swift; sourceTree = "<group>"; };
 		CD891A232C3DBEA0000E5986 /* GeneralCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD8C9ABA2C403DC6001B92CA /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD8C9ABC2C4047A4001B92CA /* GeneralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD3243D62C50161E003528F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD3243D22C50152A003528F9 /* NewsRespondObject.swift */,
+				CD3243D42C50158F003528F9 /* ArticleRespondObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CD4438C82C4031F800D79C38 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +94,7 @@
 				CD891A022C3DAF13000E5986 /* AppDelegate.swift */,
 				CD891A162C3DB09D000E5986 /* TabBarController.swift */,
 				CD891A1F2C3DBE6B000E5986 /* General */,
+				CD3243D62C50161E003528F9 /* Model */,
 				CD891A202C3DBE73000E5986 /* Business */,
 				CD891A212C3DBE79000E5986 /* Technology */,
 				CD4438C82C4031F800D79C38 /* News */,
@@ -89,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				CD891A222C3DBE83000E5986 /* View */,
+				CD8C9ABE2C4047AB001B92CA /* ViewModel */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -97,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				CD891A182C3DB165000E5986 /* BusinessViewController.swift */,
+				CD8C9ABA2C403DC6001B92CA /* DetailsCollectionViewCell.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -116,6 +138,15 @@
 				CD891A232C3DBEA0000E5986 /* GeneralCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CD8C9ABE2C4047AB001B92CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD8C9ABC2C4047A4001B92CA /* GeneralViewModel.swift */,
+				CD3243D72C5018CB003528F9 /* ArticleCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +230,13 @@
 				CD891A172C3DB09D000E5986 /* TabBarController.swift in Sources */,
 				CD891A072C3DAF13000E5986 /* GeneralViewController.swift in Sources */,
 				CD4438C72C40140100D79C38 /* NewsViewController.swift in Sources */,
+				CD8C9ABD2C4047A4001B92CA /* GeneralViewModel.swift in Sources */,
 				CD891A192C3DB165000E5986 /* BusinessViewController.swift in Sources */,
+				CD3243D32C50152A003528F9 /* NewsRespondObject.swift in Sources */,
 				CD891A032C3DAF13000E5986 /* AppDelegate.swift in Sources */,
+				CD3243D82C5018CB003528F9 /* ArticleCellViewModel.swift in Sources */,
+				CD3243D52C50158F003528F9 /* ArticleRespondObject.swift in Sources */,
+				CD8C9ABB2C403DC6001B92CA /* DetailsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

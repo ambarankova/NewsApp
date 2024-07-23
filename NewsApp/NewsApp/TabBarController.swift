@@ -14,12 +14,13 @@ final class TabBarController: UITabBarController {
         
         view.tintColor = .black
         setupViewControllers()
+        setupTabBar()
     }
     
     private func setupViewControllers() {
         
         viewControllers = [
-            setupNavigationController(rootViewController: GeneralViewController(),
+            setupNavigationController(rootViewController: GeneralViewController(viewModel: GeneralViewModel()),
                                       title: "General",
                                       image: UIImage(systemName: "newspaper") ?? UIImage.add),
             setupNavigationController(rootViewController: BusinessViewController(),
@@ -45,4 +46,11 @@ final class TabBarController: UITabBarController {
         return navigationController
     }
     
+    private func setupTabBar() {
+        let apperance = UITabBarAppearance()
+        apperance.configureWithOpaqueBackground()
+        tabBar.scrollEdgeAppearance = apperance
+        
+        view.tintColor = .black
+    }
 }
