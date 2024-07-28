@@ -11,6 +11,9 @@
 		CD3243D52C50158F003528F9 /* ArticleRespondObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3243D42C50158F003528F9 /* ArticleRespondObject.swift */; };
 		CD3243D82C5018CB003528F9 /* ArticleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3243D72C5018CB003528F9 /* ArticleCellViewModel.swift */; };
 		CD4438C72C40140100D79C38 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4438C62C40140100D79C38 /* NewsViewController.swift */; };
+		CD46423F2C515A27008E71C6 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD46423E2C515A27008E71C6 /* ApiManager.swift */; };
+		CD4642422C515FE6008E71C6 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4642412C515FE6008E71C6 /* NetworkingError.swift */; };
+		CD525A562C54139300384F2C /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD525A552C54139300384F2C /* NewsViewModel.swift */; };
 		CD891A032C3DAF13000E5986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A022C3DAF13000E5986 /* AppDelegate.swift */; };
 		CD891A072C3DAF13000E5986 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A062C3DAF13000E5986 /* GeneralViewController.swift */; };
 		CD891A0C2C3DAF14000E5986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD891A0B2C3DAF14000E5986 /* Assets.xcassets */; };
@@ -29,6 +32,9 @@
 		CD3243D42C50158F003528F9 /* ArticleRespondObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRespondObject.swift; sourceTree = "<group>"; };
 		CD3243D72C5018CB003528F9 /* ArticleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellViewModel.swift; sourceTree = "<group>"; };
 		CD4438C62C40140100D79C38 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		CD46423E2C515A27008E71C6 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		CD4642412C515FE6008E71C6 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		CD525A552C54139300384F2C /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		CD8919FF2C3DAF13000E5986 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD891A022C3DAF13000E5986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD891A062C3DAF13000E5986 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
@@ -68,8 +74,18 @@
 			isa = PBXGroup;
 			children = (
 				CD4438C62C40140100D79C38 /* NewsViewController.swift */,
+				CD525A552C54139300384F2C /* NewsViewModel.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		CD4642402C515FCC008E71C6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CD46423E2C515A27008E71C6 /* ApiManager.swift */,
+				CD4642412C515FE6008E71C6 /* NetworkingError.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		CD8919F62C3DAF13000E5986 = {
@@ -93,6 +109,7 @@
 			children = (
 				CD891A022C3DAF13000E5986 /* AppDelegate.swift */,
 				CD891A162C3DB09D000E5986 /* TabBarController.swift */,
+				CD4642402C515FCC008E71C6 /* Networking */,
 				CD891A1F2C3DBE6B000E5986 /* General */,
 				CD3243D62C50161E003528F9 /* Model */,
 				CD891A202C3DBE73000E5986 /* Business */,
@@ -232,8 +249,11 @@
 				CD4438C72C40140100D79C38 /* NewsViewController.swift in Sources */,
 				CD8C9ABD2C4047A4001B92CA /* GeneralViewModel.swift in Sources */,
 				CD891A192C3DB165000E5986 /* BusinessViewController.swift in Sources */,
+				CD525A562C54139300384F2C /* NewsViewModel.swift in Sources */,
 				CD3243D32C50152A003528F9 /* NewsRespondObject.swift in Sources */,
+				CD46423F2C515A27008E71C6 /* ApiManager.swift in Sources */,
 				CD891A032C3DAF13000E5986 /* AppDelegate.swift in Sources */,
+				CD4642422C515FE6008E71C6 /* NetworkingError.swift in Sources */,
 				CD3243D82C5018CB003528F9 /* ArticleCellViewModel.swift in Sources */,
 				CD3243D52C50158F003528F9 /* ArticleRespondObject.swift in Sources */,
 				CD8C9ABB2C403DC6001B92CA /* DetailsCollectionViewCell.swift in Sources */,

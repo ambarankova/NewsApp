@@ -14,7 +14,6 @@ final class NewsViewController: UIViewController {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         
-        label.text = "11.07.2024"
         label.textColor = .black
         label.font = .systemFont(ofSize: 20)
         label.textAlignment = .right
@@ -25,10 +24,9 @@ final class NewsViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         
-        label.text = newsTitle
         label.textColor = .black
         label.font = .boldSystemFont(ofSize: 30)
-        label.textAlignment = .center
+        label.numberOfLines = 3
         
         return label
     }()
@@ -36,7 +34,7 @@ final class NewsViewController: UIViewController {
     private lazy var newsImage: UIImageView = {
         let image = UIImageView()
         
-        image.image = inditexImage
+        image.contentMode = .scaleAspectFit
         
         return image
     }()
@@ -44,7 +42,6 @@ final class NewsViewController: UIViewController {
     private lazy var textView: UITextView = {
         let text = UITextView()
         
-        text.text = newsText
         text.isEditable = false
         text.font = .systemFont(ofSize: 25)
         
@@ -52,14 +49,19 @@ final class NewsViewController: UIViewController {
     }()
     
     // MARK: - Properties
-    private let date = "11.07.2024"
-    private let inditexImage = UIImage(named: "news1")
-    private let newsTitle = "Inditex 2024"
-    private let newsText = """
-Испанская текстильная группа Inditex объявила о своем вхождении в капитал Galy, стартапа, основанного в 2019 году в США для развития инновационного процесса выращивания хлопка в лаборатории с целью производства экологически чистых материалов. Цель, которую преследует Inditex, состоит в том, чтобы к 2030 году 100% ее сырья, ее волокон, стали более устойчивыми. В 2023 уже 50% сырья, используемого марками группы являются переработанными или органическими. Испанская текстильная группа Inditex объявила о своем вхождении в капитал Galy, стартапа, основанного в 2019 году в США для развития инновационного процесса выращивания хлопка в лаборатории с целью производства экологически чистых материалов. Цель, которую преследует Inditex, состоит в том, чтобы к 2030 году 100% ее сырья, ее волокон, стали более устойчивыми. В 2023 уже 50% сырья, используемого марками группы являются переработанными или органическими.
-"""
+    private let viewModel: NewsViewModelProtocol
     
     // MARK: - Life Cycle
+    init(viewModel: NewsViewModelProtocol) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,6 +73,17 @@ final class NewsViewController: UIViewController {
         [dateLabel, titleLabel, newsImage, textView].forEach { view.addSubview($0) }
         
         view.backgroundColor = .white
+        titleLabel.text = viewModel.title
+        textView.text = viewModel.description
+        dateLabel.text = viewModel.date
+    
+        if let data = viewModel.imageData,
+           let image = UIImage(data: data) {
+            newsImage.image = image
+        } else {
+            newsImage.image = UIImage(named: "image")
+        }
+        
         setupConstraints()
     }
     
@@ -81,12 +94,13 @@ final class NewsViewController: UIViewController {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
             make.top.equalTo(dateLabel.snp.bottom).offset(20)
+            make.trailing.leading.equalToSuperview().inset(10)
         }
         
         newsImage.snp.makeConstraints { make in
-            make.trailing.leading.equalToSuperview().inset(15)
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.height.equalTo(view.snp.width)
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
         }
         
@@ -96,5 +110,4 @@ final class NewsViewController: UIViewController {
             make.leading.trailing.equalToSuperview()
         }
     }
-    
 }

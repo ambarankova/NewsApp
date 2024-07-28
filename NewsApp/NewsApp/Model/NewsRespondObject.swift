@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct NewsRespondObject {
+struct NewsRespondObject: Codable {
     let totalResults: Int
-    let articles: [String]
+    let articles: [ArticleRespondObject]
+    
+    enum CodingKeys: CodingKey {
+        case totalResults
+        case articles
+    }
 }
