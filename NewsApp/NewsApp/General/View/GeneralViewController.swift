@@ -112,7 +112,6 @@ extension GeneralViewController: UICollectionViewDataSource {
         let article = viewModel.getArticle(for: indexPath.row)
         
         cell.set(article: article)
-        print(#function)
         
         return cell
     }

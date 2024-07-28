@@ -16,8 +16,8 @@ struct ArticleCellViewModel {
     
     init(article: ArticleRespondObject) {
         title = article.title
-        description = article.description
+        description = article.description ?? ""
         date = article.date
-        imageUrl = article.urlToImage
+        imageUrl = article.urlToImage ?? ""
     }
 }

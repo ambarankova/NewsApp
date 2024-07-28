@@ -54,6 +54,18 @@ final class DetailsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Methods
+    func set(article: ArticleCellViewModel) {
+        titleLabel.text = article.title
+        
+        if let data = article.imageData,
+           let image = UIImage(data: data) {
+            imageView.image = image
+        } else {
+            imageView.image = UIImage(named: "image")
+        }
+    }
+    
     // MARK: - Private Methods
     private func setupUI() {
         [imageView, titleLabel, descriptionLabel].forEach { addSubview($0) }
