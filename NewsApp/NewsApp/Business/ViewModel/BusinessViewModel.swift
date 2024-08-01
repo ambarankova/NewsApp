@@ -7,82 +7,24 @@
 
 import Foundation
 
-protocol BusinessViewModelProtocol {
-    var reloadData: (() -> Void)? { get set }
-    var showError: ((String) -> Void)? { get set }
-    var reloadCell: ((Int) -> Void)? { get set }
-    
-    var numberOfCells: Int { get }
-    
-    func getArticle(for row: Int) -> ArticleCellViewModel
-}
-
-final class BusinessViewModel: BusinessViewModelProtocol {
-    var reloadCell: ((Int) -> Void)?
-    var reloadData: (() -> Void)?
-    var showError: ((String) -> Void)?
-    
-    // MARK: - Properties
-    var numberOfCells: Int {
-        articlesBusiness.count
-    }
-    
-    private var articlesBusiness: [ArticleCellViewModel] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.reloadData?()
-            }
+final class BusinessViewModel: NewsListViewModel {
+    override func loadData(searchText: String?) {
+        super.loadData(searchText: searchText)
+        
+        ApiManager.getNews(about: .Business, page: page, searchText: searchText) { [weak self] result in
+            self?.handleResult(result)
         }
     }
     
-    init() {
-        loadData()
-    }
-    
-    func getArticle(for row: Int) -> ArticleCellViewModel {
-        return articlesBusiness[row]
-    }
-    
-    private func loadData() {
-        ApiManager.getNews(about: .Business) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let articles):
-                self.articlesBusiness = self.convertToCellViewModel(articles)
-                self.loadImage()
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.showError?(error.localizedDescription)
-                }
-            }
+    override func convertToCellViewModel(_ articles: [ArticleRespondObject]) {
+        var viewModels = articles.map { ArticleCellViewModel(article: $0) }
+        
+        if sections.isEmpty {
+            let firstSection = TableCollectionViewSection(items: [viewModels.removeFirst()])
+            let secondSection = TableCollectionViewSection(items: viewModels)
+            sections = [firstSection, secondSection]
+        } else {
+            sections[1].items += viewModels
         }
-    }
-    
-    private func loadImage() {
-        for (index, article) in articlesBusiness.enumerated() {
-                ApiManager.getImageData(url: article.imageUrl) { [weak self] result in
-                    
-                    DispatchQueue.main.async {
-                        switch result {
-                        case .success(let data):
-                            self?.articlesBusiness[index].imageData = data
-                            self?.reloadCell?(index)
-                        case .failure(let error):
-                            self?.showError?(error.localizedDescription)
-                        }
-                    }
-                }
-            }
-    }
-    
-    private func convertToCellViewModel(_ articles: [ArticleRespondObject]) -> [ArticleCellViewModel] {
-        return articles.map { ArticleCellViewModel(article: $0) }
-    }
-    
-    private func setupMockObjects() {
-        articlesBusiness = [
-            ArticleCellViewModel(article:  ArticleRespondObject(title: "First object title", description: "First object description in the mock object", urlToImage: "...", date: "01.01.2001"))
-            ]
     }
 }

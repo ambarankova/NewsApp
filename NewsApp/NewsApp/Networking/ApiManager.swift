@@ -17,13 +17,20 @@ final class ApiManager {
         case Technology
     }
     
-    static func getNews(about: Theme, completion: @escaping (Result<[ArticleRespondObject], Error>) -> ()) {
+    static func getNews(about: Theme, page: Int, searchText: String?,
+                        completion: @escaping (Result<[ArticleRespondObject], Error>) -> ()) {
         switch about {
         case .Everything: path = "?sources=bbc-news&language=en"
         case .Business: path = "?q=business"
         case .Technology: path = "?q=technology"
         }
-        let stringUrl = baseUrl + "everything" + path + "&apiKey=\(apiKey)"
+        
+        var searchParameter = ""
+        if let searchText = searchText {
+            searchParameter = "&q=\(searchText)"
+        }
+        
+        let stringUrl = baseUrl + "everything" + path + "&page=\(page)" + searchParameter + "&apiKey=\(apiKey)"
         
         guard let url = URL(string: stringUrl) else { return }
         
@@ -55,6 +62,8 @@ final class ApiManager {
         if let error = error {
             completion(.failure(NetworkingError.networkingError(error)))
         } else if let data = data {
+            let json = try? JSONSerialization.jsonObject(with: data, options: [])
+            
             do {
                 let model = try JSONDecoder().decode(NewsRespondObject.self,
                                                      from: data)
