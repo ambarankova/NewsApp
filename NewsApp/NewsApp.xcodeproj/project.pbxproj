@@ -25,6 +25,7 @@
 		CD891A242C3DBEA0000E5986 /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A232C3DBEA0000E5986 /* GeneralCollectionViewCell.swift */; };
 		CD8C9ABB2C403DC6001B92CA /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C9ABA2C403DC6001B92CA /* DetailsCollectionViewCell.swift */; };
 		CD8C9ABD2C4047A4001B92CA /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C9ABC2C4047A4001B92CA /* GeneralViewModel.swift */; };
+		CDE5F3142C5680CC00A05BE4 /* BusinessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F3132C5680CC00A05BE4 /* BusinessViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		CD891A232C3DBEA0000E5986 /* GeneralCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD8C9ABA2C403DC6001B92CA /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD8C9ABC2C4047A4001B92CA /* GeneralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
+		CDE5F3132C5680CC00A05BE4 /* BusinessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +112,8 @@
 				CD891A022C3DAF13000E5986 /* AppDelegate.swift */,
 				CD891A162C3DB09D000E5986 /* TabBarController.swift */,
 				CD4642402C515FCC008E71C6 /* Networking */,
-				CD891A1F2C3DBE6B000E5986 /* General */,
 				CD3243D62C50161E003528F9 /* Model */,
+				CD891A1F2C3DBE6B000E5986 /* General */,
 				CD891A202C3DBE73000E5986 /* Business */,
 				CD891A212C3DBE79000E5986 /* Technology */,
 				CD4438C82C4031F800D79C38 /* News */,
@@ -134,8 +136,8 @@
 		CD891A202C3DBE73000E5986 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				CD891A182C3DB165000E5986 /* BusinessViewController.swift */,
-				CD8C9ABA2C403DC6001B92CA /* DetailsCollectionViewCell.swift */,
+				CDE5F3122C5680A200A05BE4 /* View */,
+				CDE5F3152C5680D300A05BE4 /* ViewModel */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -162,6 +164,23 @@
 			children = (
 				CD8C9ABC2C4047A4001B92CA /* GeneralViewModel.swift */,
 				CD3243D72C5018CB003528F9 /* ArticleCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CDE5F3122C5680A200A05BE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD891A182C3DB165000E5986 /* BusinessViewController.swift */,
+				CD8C9ABA2C403DC6001B92CA /* DetailsCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDE5F3152C5680D300A05BE4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CDE5F3132C5680CC00A05BE4 /* BusinessViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,6 +271,7 @@
 				CD525A562C54139300384F2C /* NewsViewModel.swift in Sources */,
 				CD3243D32C50152A003528F9 /* NewsRespondObject.swift in Sources */,
 				CD46423F2C515A27008E71C6 /* ApiManager.swift in Sources */,
+				CDE5F3142C5680CC00A05BE4 /* BusinessViewModel.swift in Sources */,
 				CD891A032C3DAF13000E5986 /* AppDelegate.swift in Sources */,
 				CD4642422C515FE6008E71C6 /* NetworkingError.swift in Sources */,
 				CD3243D82C5018CB003528F9 /* ArticleCellViewModel.swift in Sources */,

@@ -23,7 +23,7 @@ final class TabBarController: UITabBarController {
             setupNavigationController(rootViewController: GeneralViewController(viewModel: GeneralViewModel()),
                                       title: "General",
                                       image: UIImage(systemName: "newspaper") ?? UIImage.add),
-            setupNavigationController(rootViewController: BusinessViewController(),
+            setupNavigationController(rootViewController: BusinessViewController(viewModel: BusinessViewModel()),
                                       title: "Business",
                                       image: UIImage(systemName: "briefcase") ?? UIImage.add),
             setupNavigationController(rootViewController: TechnologyViewController(),

@@ -10,10 +10,20 @@ import Foundation
 final class ApiManager {
     private static let apiKey = "07065fca12844b40a24e30dbf1740fa4"
     private static let baseUrl = "https://newsapi.org/v2/"
-    private static let path = "everything"
+    private static var path = ""
+    enum Theme {
+        case Everything
+        case Business
+        case Technology
+    }
     
-    static func getNews(completion: @escaping (Result<[ArticleRespondObject], Error>) -> ()) {
-        let stringUrl = baseUrl + path + "?sources=bbc-news&language=en" + "&apiKey=\(apiKey)"
+    static func getNews(about: Theme, completion: @escaping (Result<[ArticleRespondObject], Error>) -> ()) {
+        switch about {
+        case .Everything: path = "?sources=bbc-news&language=en"
+        case .Business: path = "?q=business"
+        case .Technology: path = "?q=technology"
+        }
+        let stringUrl = baseUrl + "everything" + path + "&apiKey=\(apiKey)"
         
         guard let url = URL(string: stringUrl) else { return }
         

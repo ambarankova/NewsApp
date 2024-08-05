@@ -1,13 +1,13 @@
 //
-//  GeneralViewModel.swift
+//  BusinessViewModel.swift
 //  NewsApp
 //
-//  Created by Анастасия Ахановская on 11.07.2024.
+//  Created by Анастасия Ахановская on 28.07.2024.
 //
 
 import Foundation
 
-protocol GeneralViewModelProtocol {
+protocol BusinessViewModelProtocol {
     var reloadData: (() -> Void)? { get set }
     var showError: ((String) -> Void)? { get set }
     var reloadCell: ((Int) -> Void)? { get set }
@@ -17,17 +17,17 @@ protocol GeneralViewModelProtocol {
     func getArticle(for row: Int) -> ArticleCellViewModel
 }
 
-final class GeneralViewModel: GeneralViewModelProtocol {
+final class BusinessViewModel: BusinessViewModelProtocol {
     var reloadCell: ((Int) -> Void)?
     var reloadData: (() -> Void)?
     var showError: ((String) -> Void)?
     
     // MARK: - Properties
     var numberOfCells: Int {
-        articles.count
+        articlesBusiness.count
     }
     
-    private var articles: [ArticleCellViewModel] = [] {
+    private var articlesBusiness: [ArticleCellViewModel] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.reloadData?()
@@ -40,16 +40,16 @@ final class GeneralViewModel: GeneralViewModelProtocol {
     }
     
     func getArticle(for row: Int) -> ArticleCellViewModel {
-        return articles[row]
+        return articlesBusiness[row]
     }
     
     private func loadData() {
-        ApiManager.getNews(about: .Everything) { [weak self] result in
+        ApiManager.getNews(about: .Business) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let articles):
-                self.articles = self.convertToCellViewModel(articles)
+                self.articlesBusiness = self.convertToCellViewModel(articles)
                 self.loadImage()
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -60,15 +60,13 @@ final class GeneralViewModel: GeneralViewModelProtocol {
     }
     
     private func loadImage() {
-//        guard let url = URL(string: articles[row].imageUrl),
-//              let data = try? Data(contentsOf: url) else { return }
-        for (index, article) in articles.enumerated() {
+        for (index, article) in articlesBusiness.enumerated() {
                 ApiManager.getImageData(url: article.imageUrl) { [weak self] result in
                     
                     DispatchQueue.main.async {
                         switch result {
                         case .success(let data):
-                            self?.articles[index].imageData = data
+                            self?.articlesBusiness[index].imageData = data
                             self?.reloadCell?(index)
                         case .failure(let error):
                             self?.showError?(error.localizedDescription)
@@ -83,7 +81,7 @@ final class GeneralViewModel: GeneralViewModelProtocol {
     }
     
     private func setupMockObjects() {
-        articles = [
+        articlesBusiness = [
             ArticleCellViewModel(article:  ArticleRespondObject(title: "First object title", description: "First object description in the mock object", urlToImage: "...", date: "01.01.2001"))
             ]
     }
