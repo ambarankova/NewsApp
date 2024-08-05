@@ -78,7 +78,11 @@ final class GeneralViewController: UIViewController {
         }
         
         viewModel.showError = { error in
-            // TODO: show alert
+            let alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(action)
+            
+            self.present(alert, animated: true)
             print(error)
         }
     }
@@ -153,5 +157,13 @@ extension GeneralViewController: UISearchBarDelegate {
         if searchText.isEmpty {
             viewModel.loadData(searchText: nil)
         }
+        
+        let recognizer = UITapGestureRecognizer(target: self,
+                                                action: #selector(hideKeyboard))
+        view.addGestureRecognizer(recognizer)
+    }
+    
+    @objc private func hideKeyboard() {
+        searchBar.searchTextField.resignFirstResponder()
     }
 }

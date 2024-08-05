@@ -26,6 +26,8 @@
 		CD891A242C3DBEA0000E5986 /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD891A232C3DBEA0000E5986 /* GeneralCollectionViewCell.swift */; };
 		CD8C9ABB2C403DC6001B92CA /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C9ABA2C403DC6001B92CA /* DetailsCollectionViewCell.swift */; };
 		CD8C9ABD2C4047A4001B92CA /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C9ABC2C4047A4001B92CA /* GeneralViewModel.swift */; };
+		CDAEE7A42C611DDC00CE9046 /* TechCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAEE7A32C611DDC00CE9046 /* TechCollectionViewCell.swift */; };
+		CDAEE7A72C611DFB00CE9046 /* TechnologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAEE7A62C611DFB00CE9046 /* TechnologyViewModel.swift */; };
 		CDE5F3142C5680CC00A05BE4 /* BusinessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F3132C5680CC00A05BE4 /* BusinessViewModel.swift */; };
 		CDE5F3172C58019300A05BE4 /* TableCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F3162C58019300A05BE4 /* TableCollectionViewSection.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,8 @@
 		CD891A232C3DBEA0000E5986 /* GeneralCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD8C9ABA2C403DC6001B92CA /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD8C9ABC2C4047A4001B92CA /* GeneralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
+		CDAEE7A32C611DDC00CE9046 /* TechCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechCollectionViewCell.swift; sourceTree = "<group>"; };
+		CDAEE7A62C611DFB00CE9046 /* TechnologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyViewModel.swift; sourceTree = "<group>"; };
 		CDE5F3132C5680CC00A05BE4 /* BusinessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewModel.swift; sourceTree = "<group>"; };
 		CDE5F3162C58019300A05BE4 /* TableCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,7 +154,8 @@
 		CD891A212C3DBE79000E5986 /* Technology */ = {
 			isa = PBXGroup;
 			children = (
-				CD891A1A2C3DB17F000E5986 /* TechnologyViewController.swift */,
+				CDAEE7A52C611DE500CE9046 /* View */,
+				CDAEE7A82C611E0000CE9046 /* ViewModel */,
 			);
 			path = Technology;
 			sourceTree = "<group>";
@@ -170,6 +175,23 @@
 				CD8C9ABC2C4047A4001B92CA /* GeneralViewModel.swift */,
 				CD3243D72C5018CB003528F9 /* ArticleCellViewModel.swift */,
 				CDE5F3162C58019300A05BE4 /* TableCollectionViewSection.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CDAEE7A52C611DE500CE9046 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD891A1A2C3DB17F000E5986 /* TechnologyViewController.swift */,
+				CDAEE7A32C611DDC00CE9046 /* TechCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDAEE7A82C611E0000CE9046 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CDAEE7A62C611DFB00CE9046 /* TechnologyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -275,6 +297,7 @@
 				CD39E8312C5BEE0700255E89 /* NewsListViewModel.swift in Sources */,
 				CDE5F3172C58019300A05BE4 /* TableCollectionViewSection.swift in Sources */,
 				CD8C9ABD2C4047A4001B92CA /* GeneralViewModel.swift in Sources */,
+				CDAEE7A72C611DFB00CE9046 /* TechnologyViewModel.swift in Sources */,
 				CD891A192C3DB165000E5986 /* BusinessViewController.swift in Sources */,
 				CD525A562C54139300384F2C /* NewsViewModel.swift in Sources */,
 				CD3243D32C50152A003528F9 /* NewsRespondObject.swift in Sources */,
@@ -285,6 +308,7 @@
 				CD3243D82C5018CB003528F9 /* ArticleCellViewModel.swift in Sources */,
 				CD3243D52C50158F003528F9 /* ArticleRespondObject.swift in Sources */,
 				CD8C9ABB2C403DC6001B92CA /* DetailsCollectionViewCell.swift in Sources */,
+				CDAEE7A42C611DDC00CE9046 /* TechCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
