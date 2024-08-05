@@ -1,5 +1,5 @@
 //
-//  BusinessViewController.swift
+//  TechnologyViewController.swift
 //  NewsApp
 //
 //  Created by Анастасия Ахановская on 09.07.2024.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class BusinessViewController: UIViewController {
+final class TechnologyViewController: UIViewController {
 
     // MARK: - GUI Variables
     private lazy var collectionView: UICollectionView = {
@@ -51,7 +51,7 @@ final class BusinessViewController: UIViewController {
         setupUI()
         
         collectionView.register(GeneralCollectionViewCell.self, forCellWithReuseIdentifier: "GeneralCollectionViewCell")
-        collectionView.register(DetailsCollectionViewCell.self, forCellWithReuseIdentifier: "DetailsCollectionViewCell")
+        collectionView.register(TechCollectionViewCell.self, forCellWithReuseIdentifier: "TechCollectionViewCell")
         
         viewModel.loadData(searchText: nil)
     }
@@ -93,7 +93,7 @@ final class BusinessViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-extension BusinessViewController: UICollectionViewDataSource {
+extension TechnologyViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         viewModel.sections.count
     }
@@ -111,7 +111,7 @@ extension BusinessViewController: UICollectionViewDataSource {
             cell.set(article: article)
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailsCollectionViewCell", for: indexPath) as? DetailsCollectionViewCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TechCollectionViewCell", for: indexPath) as? TechCollectionViewCell else { return UICollectionViewCell() }
             
             cell.set(article: article)
             return cell
@@ -120,7 +120,7 @@ extension BusinessViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-extension BusinessViewController: UICollectionViewDelegate {
+extension TechnologyViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let article = viewModel.sections[indexPath.section].items[indexPath.row] as? ArticleCellViewModel else { return }
         
@@ -135,7 +135,7 @@ extension BusinessViewController: UICollectionViewDelegate {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension BusinessViewController: UICollectionViewDelegateFlowLayout {
+extension TechnologyViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
         let firstSectionItemSize = CGSize(width: width, height: width)
